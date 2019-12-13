@@ -1,9 +1,29 @@
 import { withFormik, Form, Field } from "formik";
 import React from "react";
+import styled from "styled-components";
 
+const CardStyle = styled.div `   
+
+width: 44%;  
+background: white;
+color: black;
+margin-left: 27%;
+margin-top: 4%;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+transition: transform 0.2s ease-in;
+ border: 5px solid black;
+&:hover {
+  transform: translate(-5px) scale(1.05);
+}
+
+`;
 
 function postSmurfForm() {
   return (
+      <CardStyle>
     <Form className="form">
       <div />
       <div>
@@ -18,8 +38,9 @@ function postSmurfForm() {
         <label>Height: </label>
         <Field name="height" type="text" placeHolder="Height" />
       </div>
-      <button type="submit">Send new smurf to the village</button>
+      <button className="button" type="submit">Send new smurf to the village</button>
     </Form>
+    </CardStyle>
   );
 }
 
